@@ -15,8 +15,8 @@ class StockPrice {
 
     constructor() {
         this.timestampToPrice = new Map();//Map<number,number>
-        this.minHeapForPrice = new MinPriorityQueue((x, y) => x.price - y.price);//PriorityQueue<StockData>
-        this.maxHeapForPrice = new MaxPriorityQueue((x, y) => y.price - x.price);//PriorityQueue<StockData>
+        this.minHeapForPrice = new PriorityQueue((x, y) => x.price - y.price);//PriorityQueue<StockData>
+        this.maxHeapForPrice = new PriorityQueue((x, y) => y.price - x.price);//PriorityQueue<StockData>
         this.mostRecentTimestamp = 0;
     }
 
