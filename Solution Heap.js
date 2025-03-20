@@ -1,5 +1,10 @@
 
-const {PriorityQueue} = require('@datastructures-js/priority-queue');
+// const {PriorityQueue} = require('@datastructures-js/priority-queue');
+/*
+ PriorityQueue is included internally in the solution file on leetcode.
+ When running the code on leetcode it should stay outcommented. 
+ It is mentioned just for information about which external library is applied for this data structure.
+*/
 
 function StockData(timestamp, price) {
     this.timestamp = timestamp;
@@ -10,8 +15,8 @@ class StockPrice {
 
     constructor() {
         this.timestampToPrice = new Map();//Map<number,number>
-        this.minHeapForPrice = new MinPriorityQueue({compare: (x, y) => x.price - y.price});//MinPriorityQueue<StockData>
-        this.maxHeapForPrice = new MaxPriorityQueue({compare: (x, y) => y.price - x.price});//MaxPriorityQueue<StockData>
+        this.minHeapForPrice = new MinPriorityQueue((x, y) => x.price - y.price);//PriorityQueue<StockData>
+        this.maxHeapForPrice = new MaxPriorityQueue((x, y) => y.price - x.price);//PriorityQueue<StockData>
         this.mostRecentTimestamp = 0;
     }
 
